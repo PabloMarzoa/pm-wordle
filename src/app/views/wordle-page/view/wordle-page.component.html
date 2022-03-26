@@ -1,0 +1,10 @@
+<h1 class="app-title">WORDLE</h1>
+<div class="app-body">
+    <div class="selected-words">
+        <words-collection-component [selectedWords]="selectedWords">
+        </words-collection-component>
+    </div>
+    <div class="keyboard">
+        <virtual-keyboard-component (selectWord)="onWordSelected($event)"></virtual-keyboard-component>
+    </div>
+</div>

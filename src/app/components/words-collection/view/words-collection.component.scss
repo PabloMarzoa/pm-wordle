@@ -1,0 +1,36 @@
+@import "../../../../styles";
+.words-collection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+}
+
+.words-collection-container .word-letters-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.words-collection-container .word-letters-container .word-letter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+    border: 2px solid $border-color;
+    height: 1em;
+    width: 1em;
+    &.regularLetter {
+        background-color: $regular-color;
+    }
+    &.correctLetter {
+        background-color: $good-color;
+    }
+    &.correctLetterAndPosition {
+        background-color: $perfect-color;
+    }
+}

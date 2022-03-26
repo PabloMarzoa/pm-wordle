@@ -1,0 +1,12 @@
+<div class="words-collection-container">
+    <div class="word-letters-container" *ngFor="let trie of tries; let trieIndex = index">
+        <div class="word-letter" *ngFor="let letterIndex of wordIndex"
+             [ngClass]="{
+                'regularLetter': getLetterStyle(getLetter(trieIndex, letterIndex), letterIndex, trieIndex) === lettersStyles.regularLetter,
+                'correctLetter': getLetterStyle(getLetter(trieIndex, letterIndex), letterIndex, trieIndex) === lettersStyles.correctLetter,
+                'correctLetterAndPosition': getLetterStyle(getLetter(trieIndex, letterIndex), letterIndex, trieIndex) === lettersStyles.correctLetterAndPosition
+            }">
+            {{getLetter(trieIndex, letterIndex)}}
+        </div>
+    </div>
+</div>

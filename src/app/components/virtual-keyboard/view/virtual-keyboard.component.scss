@@ -1,0 +1,81 @@
+@import "../../../../styles";
+.virtual-keyboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+}
+
+.virtual-keyboard-container .current-word {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.virtual-keyboard-container .current-word .current-word-letter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+    border: 2px solid $border-color;
+    height: 1em;
+    width: 1em;
+}
+
+.virtual-keyboard-container .keyboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.virtual-keyboard-container .keyboard .keyboard-line {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.virtual-keyboard-container .keyboard .keyboard-line .keyboard-letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+    border: 2px solid $border-color;
+    height: 1em;
+    width: 1em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.virtual-keyboard-container .keyboard .keyboard-line .keyboard-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+    border: 2px solid $border-color;
+    height: 1em;
+    width: 2.1em;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.virtual-keyboard-container .keyboard .keyboard-line .keyboard-send-action {
+    @extend .keyboard-action;
+    background-color: cadetblue;
+}
+
+.virtual-keyboard-container .keyboard .keyboard-line .keyboard-back-action {
+    @extend .keyboard-action;
+    background-color: darkred;
+}

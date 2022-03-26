@@ -1,0 +1,54 @@
+<div class="virtual-keyboard-container">
+
+    <div class="current-word">
+        <div class="current-word-letter" *ngFor="let letterIndex of currentWordIndex">
+            {{currentWord[letterIndex]}}
+        </div>
+    </div>
+
+    <div class="keyboard">
+        <div class="keyboard-line">
+            <div class="keyboard-letter"
+                 matRipple
+                 (click)="addLetter(letter)"
+                 [matRippleCentered]="true"
+                 *ngFor="let letter of line1">
+                {{letter}}
+            </div>
+        </div>
+        <div class="keyboard-line">
+            <div class="keyboard-letter"
+                 matRipple
+                 (click)="addLetter(letter)"
+                 [matRippleCentered]="true"
+                 *ngFor="let letter of line2">
+                {{letter}}
+            </div>
+        </div>
+        <div class="keyboard-line">
+            <div class="keyboard-send-action"
+                 matRipple
+                 (click)="sendWord()"
+                 [matRippleCentered]="true">
+                <span class="material-icons">
+                    check
+                </span>
+            </div>
+            <div class="keyboard-letter"
+                 matRipple
+                 (click)="addLetter(letter)"
+                 [matRippleCentered]="true"
+                 *ngFor="let letter of line3">
+                {{letter}}
+            </div>
+            <div class="keyboard-back-action"
+                 matRipple
+                 (click)="removeLastLetter()"
+                 [matRippleCentered]="true">
+                <span class="material-icons">
+                    backspace
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

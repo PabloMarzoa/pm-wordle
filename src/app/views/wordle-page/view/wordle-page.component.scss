@@ -1,0 +1,22 @@
+.app-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.app-body {
+    width: 100%;
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.app-body .selected-words {
+}
+
+.app-body .keyboard {
+}
