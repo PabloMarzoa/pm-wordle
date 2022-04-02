@@ -3,13 +3,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     user-select: none;
+    height: 100%;
+    width: 100%;
 }
 
 .virtual-keyboard-container .current-word {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
+    max-width: 430px;
 }
 
 .virtual-keyboard-container .current-word .current-word-letter {
@@ -22,22 +27,31 @@
     padding: 3px;
     margin: 3px;
     border: 2px solid $border-color;
-    height: 1em;
-    width: 1em;
+    flex-grow: 1;
+    max-width: 15vw;
+    height: 1.5em;
 }
 
-.virtual-keyboard-container .keyboard {
+.virtual-keyboard-container .virtual-keyboard {
     display: flex;
     flex-direction: column;
+    max-width: 430px;
+    width: 100%;
+    flex-grow: 1;
 }
 
-.virtual-keyboard-container .keyboard .keyboard-line {
+.virtual-keyboard-container .virtual-keyboard .keyboard-line {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    max-height: 4em;
 }
 
-.virtual-keyboard-container .keyboard .keyboard-line .keyboard-letter {
+.virtual-keyboard-container .virtual-keyboard .keyboard-line .keyboard-letter {
+    font-family: monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,14 +60,15 @@
     padding: 3px;
     margin: 3px;
     border: 2px solid $border-color;
-    height: 1em;
-    width: 1em;
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-height: 2.5em;
     &:hover {
         cursor: pointer;
     }
 }
 
-.virtual-keyboard-container .keyboard .keyboard-line .keyboard-action {
+.virtual-keyboard-container .virtual-keyboard .keyboard-line .keyboard-action {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,20 +77,20 @@
     padding: 3px;
     margin: 3px;
     border: 2px solid $border-color;
-    height: 1em;
     width: 2.1em;
+    max-height: 2.5em;
     color: white;
     &:hover {
         cursor: pointer;
     }
 }
 
-.virtual-keyboard-container .keyboard .keyboard-line .keyboard-send-action {
+.virtual-keyboard-container .virtual-keyboard .keyboard-line .keyboard-send-action {
     @extend .keyboard-action;
     background-color: cadetblue;
 }
 
-.virtual-keyboard-container .keyboard .keyboard-line .keyboard-back-action {
+.virtual-keyboard-container .virtual-keyboard    .keyboard-line .keyboard-back-action {
     @extend .keyboard-action;
     background-color: darkred;
 }
