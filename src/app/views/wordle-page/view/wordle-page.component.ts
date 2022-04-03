@@ -23,6 +23,11 @@ export class WordlePageComponent {
     onWordSelected(word: string): void {
         if (this.selectedWords.length < 5 && this.checkWordLength(word) && this.checkIfWordExists(word)) {
             this.selectedWords.push(word);
+            if (word === this.randomWord) {
+                setTimeout(() => {}); // TODO: Navegar a acierto
+            } else if (this.selectedWords.length === 5) {
+                setTimeout(() => {}); // TODO: Navegar a error
+            }
         }
     }
 
