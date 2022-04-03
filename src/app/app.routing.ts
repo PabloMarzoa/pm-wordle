@@ -6,6 +6,10 @@ const routes: Routes = [
     {
         path: 'wordle',
         loadChildren: () => import('./views/wordle-page/wordle-page.module').then(m => m.WordlePageModule)
+    },
+    {
+        path: 'done',
+        loadChildren: () => import('./views/done/done.module').then(m => m.DoneModule)
     }
 ];
 
@@ -13,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRouting { }

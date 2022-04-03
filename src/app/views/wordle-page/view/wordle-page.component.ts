@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {WordsService} from "../../../services/words.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
     templateUrl: 'wordle-page.component.html',
@@ -14,6 +15,7 @@ export class WordlePageComponent {
 
     constructor(
         private snackBar: MatSnackBar,
+        private router: Router,
         private wordsService: WordsService
     ) {
         this.randomWord = this.wordsService.getRandomWord()
@@ -24,9 +26,13 @@ export class WordlePageComponent {
         if (this.selectedWords.length < 5 && this.checkWordLength(word) && this.checkIfWordExists(word)) {
             this.selectedWords.push(word);
             if (word === this.randomWord) {
-                setTimeout(() => {}); // TODO: Navegar a acierto
+                setTimeout(() => {
+                    this.router.navigate(['./done/great']);
+                }); // TODO: Navegar a acierto
             } else if (this.selectedWords.length === 5) {
-                setTimeout(() => {}); // TODO: Navegar a error
+                setTimeout(() => {
+                    this.router.navigate(['./done/error']);
+                }); // TODO: Navegar a error
             }
         }
     }
