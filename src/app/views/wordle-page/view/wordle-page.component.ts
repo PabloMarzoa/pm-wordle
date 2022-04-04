@@ -21,6 +21,7 @@ export class WordlePageComponent {
         private router: Router,
         private wordsService: WordsService
     ) {
+        this.wordsService.calculateRandomWordIndex();
         this.randomWord = this.wordsService.getRandomWord();
         this.tries = this.wordsService.tries.length;
         console.log('test-word', this.randomWord);

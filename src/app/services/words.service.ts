@@ -19,7 +19,7 @@ export class WordsService {
         return this.wordsCollection.findIndex(w => Helpers.replaceAccents(w) === word) !== -1;
     }
 
-    private calculateRandomWordIndex(): void {
+    public calculateRandomWordIndex(): void {
         this.randomWordIndex = Math.floor(Math.random() * this.wordsCollection.length);
     }
 }
