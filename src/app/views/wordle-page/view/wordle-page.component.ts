@@ -32,11 +32,11 @@ export class WordlePageComponent {
             this.checkLetters(word);
             if (word === this.randomWord) {
                 setTimeout(() => {
-                    //this.router.navigate(['./done/great']);
+                    this.router.navigate(['./done/great']);
                 });
             } else if (this.selectedWords.length === this.tries) {
                 setTimeout(() => {
-                    //this.router.navigate(['./done/error']);
+                    this.router.navigate(['./done/error']);
                 });
             }
         }
