@@ -10,6 +10,7 @@
         <div class="keyboard-line">
             <div class="keyboard-letter"
                  matRipple
+                 [ngClass]="{'correctLetter': correctLetter(letter), 'correctLetterAndPosition': correctLetterAndPosition(letter)}"
                  (click)="addLetter(letter)"
                  [matRippleCentered]="true"
                  *ngFor="let letter of line1">
@@ -19,6 +20,7 @@
         <div class="keyboard-line">
             <div class="keyboard-letter"
                  matRipple
+                 [ngClass]="{'correctLetter': correctLetter(letter), 'correctLetterAndPosition': correctLetterAndPosition(letter)}"
                  (click)="addLetter(letter)"
                  [matRippleCentered]="true"
                  *ngFor="let letter of line2">
@@ -36,6 +38,7 @@
             </div>
             <div class="keyboard-letter"
                  matRipple
+                 [ngClass]="{'correctLetter': correctLetter(letter), 'correctLetterAndPosition': correctLetterAndPosition(letter)}"
                  (click)="addLetter(letter)"
                  [matRippleCentered]="true"
                  *ngFor="let letter of line3">

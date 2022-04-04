@@ -13,6 +13,8 @@ export class WordlePageComponent {
     public randomWord = 'amata';
     public currentWordLength: number = 5;
     public tries = 0;
+    public correctPositionedLetters: string[] = [];
+    public correctLetters: string[] = [];
 
     constructor(
         private snackBar: MatSnackBar,
@@ -27,13 +29,14 @@ export class WordlePageComponent {
     onWordSelected(word: string): void {
         if (this.selectedWords.length < this.tries && this.checkWordLength(word) && this.checkIfWordExists(word)) {
             this.selectedWords.push(word);
+            this.checkLetters(word);
             if (word === this.randomWord) {
                 setTimeout(() => {
-                    this.router.navigate(['./done/great']);
+                    //this.router.navigate(['./done/great']);
                 });
             } else if (this.selectedWords.length === this.tries) {
                 setTimeout(() => {
-                    this.router.navigate(['./done/error']);
+                    //this.router.navigate(['./done/error']);
                 });
             }
         }
@@ -55,5 +58,27 @@ export class WordlePageComponent {
             this.snackBar.open('La palabra seleccionada no existe', '',{duration: 3000, verticalPosition: 'top'});
             return false;
         }
+    }
+
+    private checkLetters(word: string): void {
+        const wordLetters: string [] = this.randomWord.match(/.{1,1}/g) as string[];
+        let i = 0;
+        wordLetters.forEach(letter => {
+            if (word.indexOf(letter) !== -1) {
+                if (this.correctLetters.findIndex(occurrence => occurrence === letter) === -1) {
+                    this.correctLetters.push(letter);
+                }
+            }
+            if (word[i] === letter) {
+                if (this.correctPositionedLetters.findIndex(occurrence => occurrence === letter) === -1) {
+                    this.correctPositionedLetters.push(letter);
+                }
+                const correctIndex = this.correctLetters.findIndex(occurrence => occurrence === letter);
+                if (correctIndex !== -1) {
+                    this.correctLetters.slice(correctIndex, 1);
+                }
+            }
+            i = i + 1;
+        });
     }
 }

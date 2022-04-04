@@ -16,6 +16,8 @@ export class VirtualKeyboardComponent {
 
     @Input() fundedLetters: string[] = [];
     @Input() foundedAndLocatedLetters: string[] = [];
+    @Input() correctPositionedLetters: string[] = [];
+    @Input() correctLetters: string[] = [];
 
     @Output() selectWord: EventEmitter<string> = new EventEmitter<string>();
 
@@ -40,5 +42,13 @@ export class VirtualKeyboardComponent {
         if (this.currentWord.length > 0) {
             this.currentWord = this.currentWord.slice(0, -1);
         }
+    }
+
+    public correctLetter(letter: string): boolean {
+        return this.correctLetters.findIndex(occurrence => occurrence === letter) !== -1;
+    }
+
+    public correctLetterAndPosition(letter: string): boolean {
+        return this.correctPositionedLetters.findIndex(occurrence => occurrence === letter) !== -1;
     }
 }

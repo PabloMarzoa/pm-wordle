@@ -15,7 +15,6 @@
     justify-content: center;
     width: 100%;
     max-width: 430px;
-    background-color: rgba(198, 198, 198, 0.76);
     border-radius: 10px;
 }
 
@@ -68,6 +67,14 @@
     max-height: 2.5em;
     &:hover {
         cursor: pointer;
+    }
+    &.correctLetter {
+        background-color: $good-color;
+        color: white;
+    }
+    &.correctLetterAndPosition {
+        background-color: $perfect-color;
+        color: white;
     }
 }
 

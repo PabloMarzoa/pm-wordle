@@ -2,5 +2,9 @@
     <words-collection-component class="selected-words" [selectedWords]="selectedWords">
     </words-collection-component>
 
-    <virtual-keyboard-component class="keyboard" (selectWord)="onWordSelected($event)"></virtual-keyboard-component>
+    <virtual-keyboard-component class="keyboard"
+                                (selectWord)="onWordSelected($event)"
+                                [correctLetters]="correctLetters"
+                                [correctPositionedLetters]="correctPositionedLetters">
+    </virtual-keyboard-component>
 </div>

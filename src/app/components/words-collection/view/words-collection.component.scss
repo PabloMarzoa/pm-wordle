@@ -31,6 +31,7 @@
     border: 2px solid $border-color;
     flex-grow: 1;
     max-width: 15vw;
+    color: white;
     &.regularLetter {
         background-color: $regular-color;
     }
