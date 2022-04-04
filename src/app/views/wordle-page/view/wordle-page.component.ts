@@ -12,27 +12,29 @@ export class WordlePageComponent {
     public selectedWords: string[] = [];
     public randomWord = 'amata';
     public currentWordLength: number = 5;
+    public tries = 0;
 
     constructor(
         private snackBar: MatSnackBar,
         private router: Router,
         private wordsService: WordsService
     ) {
-        this.randomWord = this.wordsService.getRandomWord()
+        this.randomWord = this.wordsService.getRandomWord();
+        this.tries = this.wordsService.tries.length;
         console.log('test-word', this.randomWord);
     }
 
     onWordSelected(word: string): void {
-        if (this.selectedWords.length < 5 && this.checkWordLength(word) && this.checkIfWordExists(word)) {
+        if (this.selectedWords.length < this.tries && this.checkWordLength(word) && this.checkIfWordExists(word)) {
             this.selectedWords.push(word);
             if (word === this.randomWord) {
                 setTimeout(() => {
                     this.router.navigate(['./done/great']);
-                }); // TODO: Navegar a acierto
-            } else if (this.selectedWords.length === 5) {
+                });
+            } else if (this.selectedWords.length === this.tries) {
                 setTimeout(() => {
                     this.router.navigate(['./done/error']);
-                }); // TODO: Navegar a error
+                });
             }
         }
     }

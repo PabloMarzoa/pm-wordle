@@ -4,6 +4,7 @@ import {AppRouting} from './app.routing';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WordsService} from "./services/words.service";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import {WordsService} from "./services/words.service";
         BrowserModule,
         AppRouting,
         BrowserAnimationsModule,
+        MatToolbarModule,
     ],
     providers: [
         WordsService

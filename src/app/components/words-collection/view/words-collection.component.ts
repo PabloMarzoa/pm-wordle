@@ -11,7 +11,7 @@ export class WordsCollectionComponent {
     public currentWord: string = '';
     public currentWordLength: number = 5;
     public wordIndex: number[] = [];
-    public tries: number[] = [0, 1, 2, 3, 4];
+    public tries: number[] = [];
     public randomWord = '';
     public lettersStyles = LetterStyles;
 
@@ -24,6 +24,7 @@ export class WordsCollectionComponent {
         for (let i = 0; i <= this.currentWordLength - 1; i++) {
             this.wordIndex.push(i);
         }
+        this.tries = this.wordsService.tries;
     }
 
     public getLetter(trieIndex: number, letterIndex: number): string {
