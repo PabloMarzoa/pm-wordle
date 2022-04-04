@@ -43,7 +43,7 @@ export class WordlePageComponent {
         if (word.length === this.currentWordLength) {
             return true;
         } else {
-            this.snackBar.open('Palabra demasiado corta', '',{duration: 3000});
+            this.snackBar.open('Palabra demasiado corta', '',{duration: 3000, verticalPosition: 'top'});
             return false;
         }
     }
@@ -52,7 +52,7 @@ export class WordlePageComponent {
         if (this.wordsService.wordExists(word)) {
             return true;
         } else {
-            this.snackBar.open('La palabra seleccionada no existe', '',{duration: 3000});
+            this.snackBar.open('La palabra seleccionada no existe', '',{duration: 3000, verticalPosition: 'top'});
             return false;
         }
     }

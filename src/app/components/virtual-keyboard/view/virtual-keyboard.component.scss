@@ -15,9 +15,12 @@
     justify-content: center;
     width: 100%;
     max-width: 430px;
+    background-color: rgba(198, 198, 198, 0.76);
+    border-radius: 10px;
 }
 
 .virtual-keyboard-container .current-word .current-word-letter {
+    font-family: monospace;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,7 +29,7 @@
     border-radius: 5px;
     padding: 3px;
     margin: 3px;
-    border: 2px solid $border-color;
+    border: 2px solid $border-edition-color;
     flex-grow: 1;
     max-width: 15vw;
     height: 1.5em;

@@ -7,7 +7,8 @@ html, body {
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-$border-color: #404040;
+$border-color: rgba(64, 64, 64, 0.55);
+$border-edition-color: #673ab7;
 $regular-color: #c1c1c1;
 $perfect-color: rgb(87, 199, 96);
 $good-color: rgb(75, 133, 151);
